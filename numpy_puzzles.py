@@ -67,3 +67,19 @@ select_from_two_arrays(x, y, b):
 
 def select_from_two_arrays(x,y,b):
     return np.where(b, x, y)
+
+"""
+
+Write a function that compute the sum of squared differences between two arrays:
+
+x = np.array([0, 1, 0, 1, 0, 1])
+y = np.array([0, 1, 2, 3, 4, 5])
+sum_of_squared_differences(x, y)
+    => 40
+
+"""
+
+
+def sum_of_squared_differences(x,y):
+    return np.sum((x-y)**2)
+
