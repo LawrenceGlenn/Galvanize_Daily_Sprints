@@ -102,3 +102,23 @@ def row_or_column_means(x, label):
     else:
         ax = 1
     return np.mean(x, axis=ax)
+
+"""
+Write a function that creates a square two-dimensional array of zeros, but with ones on the diagonals immediately below and above the main diagonal. For example, when n=5, you should create the following two-dimensional array
+
+ones_above_and_below_diagonal(5)
+    => np.array([
+  [0, 1, 0, 0, 0],
+  [1, 0, 1, 0, 0],
+  [0, 1, 0, 1, 0],
+  [0, 0, 1, 0, 1],
+  [0, 0, 0, 1, 0]
+])
+
+"""
+
+def ones_above_and_below_diagonal(n):
+    x = np.zeros((n,n), int)
+    np.fill_diagonal(x[1:], 1)
+    np.fill_diagonal(x[:, 1:], 1)
+    return x
