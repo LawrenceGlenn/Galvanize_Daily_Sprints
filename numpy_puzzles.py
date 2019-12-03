@@ -27,9 +27,20 @@ random_array(4, 3)
 def random_array(row,col):
     return np.random.rand(row,col)
 
-
 """
 
+Given an integer numpy array of 0's and 1's, write a function that creates a new array where 0's are replaced with the word "red" and 1's are replaced with the word "blue".
+
+x = np.array([0, 0, 1, 0, 1]) 
+color_replace(x)
+    => np.array(["red", "red", "blue", "red", "blue"])
+
+"""
+def color_replace(x):
+    x = np.where(x==0, "red", "blue")
+    return x
+
+"""
 
 Given two equal length arrays, x with some general numeric data, and b an array of booleans, write a function that computes the sum of the data in x at the same positions where b is True, and the sum of the values in x at the positions where b is false.
 
@@ -42,4 +53,3 @@ compute_true_false_sums(x, b)
 
 def compute_true_false_sums(x,b):
     return {True: np.sum(x[b]), False: np.sum(x[np.invert(b)])}
-
