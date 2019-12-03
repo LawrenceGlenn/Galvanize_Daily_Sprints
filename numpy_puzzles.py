@@ -27,3 +27,19 @@ random_array(4, 3)
 def random_array(row,col):
     return np.random.rand(row,col)
 
+
+"""
+
+
+Given two equal length arrays, x with some general numeric data, and b an array of booleans, write a function that computes the sum of the data in x at the same positions where b is True, and the sum of the values in x at the positions where b is false.
+
+x = np.array([0,    1,    2,     3,    4,     5])
+b = np.array([True, True, False, True, False, False])
+compute_true_false_sums(x, b)
+    => {True: 4, False: 11}
+
+"""
+
+def compute_true_false_sums(x,b):
+    return {True: np.sum(x[b]), False: np.sum(x[np.invert(b)])}
+
