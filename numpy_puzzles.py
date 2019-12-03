@@ -53,6 +53,8 @@ compute_true_false_sums(x, b)
 
 def compute_true_false_sums(x,b):
     return {True: np.sum(x[b]), False: np.sum(x[np.invert(b)])}
+
+
 """
 
 Write a function that selects from one of two arrays based on the value in another boolean array.
@@ -67,6 +69,7 @@ select_from_two_arrays(x, y, b):
 
 def select_from_two_arrays(x,y,b):
     return np.where(b, x, y)
+
 
 """
 
@@ -103,7 +106,9 @@ def row_or_column_means(x, label):
         ax = 1
     return np.mean(x, axis=ax)
 
+
 """
+
 Write a function that creates a square two-dimensional array of zeros, but with ones on the diagonals immediately below and above the main diagonal. For example, when n=5, you should create the following two-dimensional array
 
 ones_above_and_below_diagonal(5)
@@ -140,6 +145,29 @@ checkerboard(5)
 """
 
 def checkerboard(n):
-    x = np.zeros(n*n)
+    x = np.zeros(n*n, int)
     x[::2] = 1
     return x.reshape(n,n)
+
+
+"""
+
+Write a function that creates a square two-dimensional array with ones around the border, and zeros in the interior.
+
+ones_border(5)
+    => array([
+  [1, 1, 1, 1, 1],
+  [1, 0, 0, 0, 1],
+  [1, 0, 0, 0, 1],
+  [1, 0, 0, 0, 1],
+  [1, 1, 1, 1, 1]
+])
+
+"""
+def ones_border(n):
+    x = np.zeros((n,n), int)
+    x[0] = 1
+    x[n-1] = 1
+    x[:,0] = 1
+    x[:, n-1] = 1
+    return x
