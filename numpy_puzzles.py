@@ -122,3 +122,24 @@ def ones_above_and_below_diagonal(n):
     np.fill_diagonal(x[1:], 1)
     np.fill_diagonal(x[:, 1:], 1)
     return x
+
+
+"""
+
+Write a function that creates a square two-dimensional array with a checkerboard pattern of 0's and 1's of any given size.
+
+checkerboard(5)
+    => np.aray([
+  [1, 0, 1, 0, 1],
+  [0, 1, 0, 1, 0],
+  [1, 0, 1, 0, 1],
+  [0, 1, 0, 1, 0],
+  [1, 0, 1, 0, 1],
+])
+
+"""
+
+def checkerboard(n):
+    x = np.zeros(n*n)
+    x[::2] = 1
+    return x.reshape(n,n)
