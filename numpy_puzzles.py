@@ -83,3 +83,22 @@ sum_of_squared_differences(x, y)
 def sum_of_squared_differences(x,y):
     return np.sum((x-y)**2)
 
+
+""" 
+
+Write a function that consumes a two-dimensional numpy array (so, a matrix), and a label which is either "row" or "column". The function should return a one-dimensional numpy array (vector) with either the row or column averages.
+
+X = np.array([[0, 1], [2, 1]])
+row_or_column_means(X, label="row")
+    => np.array([0.5, 1.5])
+row_or_column_means(X, label="column")
+    => np.array([1.0, 1.0])
+
+"""
+
+def row_or_column_means(x, label):
+    if label == "column":
+        ax = 0
+    else:
+        ax = 1
+    return np.mean(x, axis=ax)
