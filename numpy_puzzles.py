@@ -53,3 +53,17 @@ compute_true_false_sums(x, b)
 
 def compute_true_false_sums(x,b):
     return {True: np.sum(x[b]), False: np.sum(x[np.invert(b)])}
+"""
+
+Write a function that selects from one of two arrays based on the value in another boolean array.
+
+x = np.array([1,    2,    3,     4,    5,     6])
+y = np.array([10,   20,   30,    40,   50,    60])
+b = np.array([True, True, False, True, False, True])
+select_from_two_arrays(x, y, b):
+    => np.array(1, 2, 30, 4, 50, 6])
+
+"""
+
+def select_from_two_arrays(x,y,b):
+    return np.where(b, x, y)
